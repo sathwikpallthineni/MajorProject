@@ -1,0 +1,108 @@
+<% layout("/boilerplate.ejs") -%>
+
+<body class="bg-light">
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+
+            <h3 class="text-center mb-4 fw-semibold" style="color:#FF385C;">
+              Add New Listing
+            </h3>
+
+            <form method="post" action="/listings" enctype="multipart/form-data">
+
+              <div class="mb-4">
+                <h6 class="fw-semibold mb-3">Basic Info</h6>
+
+                <div class="mb-3">
+                  <label class="form-label">Title</label>
+                  <input 
+                    type="text" 
+                    name="title" 
+                    class="form-control" 
+                    placeholder="Enter listing title"
+                    required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Description</label>
+                  <textarea 
+                    name="description" 
+                    class="form-control" 
+                    rows="4"
+                    placeholder="Describe the place"
+                    required></textarea>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-semibold mb-3">Upload Image</h6>
+
+                <div class="mb-2">
+                  <input 
+                    type="file" 
+                    name="image" 
+                    class="form-control"
+                    required>
+                </div>
+                <small class="text-muted">
+                  Upload a JPG or PNG image (max 5MB)
+                </small>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-semibold mb-3">Pricing & Location</h6>
+
+                <div class="mb-3">
+                  <label class="form-label">Price (per night)</label>
+                  <input 
+                    type="number" 
+                    name="price" 
+                    class="form-control" 
+                    placeholder="Enter price"
+                    required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Location</label>
+                  <input 
+                    type="text" 
+                    name="location" 
+                    class="form-control" 
+                    placeholder="City / Area"
+                    required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Country</label>
+                  <input 
+                    type="text" 
+                    name="country" 
+                    class="form-control" 
+                    placeholder="Country name"
+                    required>
+                </div>
+              </div>
+
+              <div class="d-grid">
+                <button 
+                  class="btn text-white fw-semibold"
+                  style="background-color:#FF385C;">
+                  Create Listing
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>

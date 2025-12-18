@@ -1,0 +1,118 @@
+    <% layout("/boilerplate.ejs") -%>
+
+<body>
+    <script>
+     let mapToken = "<%=process.env.MAP_TOKEN%>";
+     const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>
+    </script>
+    <div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"> <img src="<%= listing.image.url %>" ></div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+</div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------- -->
+<div class="main-view-listing">
+    <div class="view-listing">
+        <div class="listing-details">
+            <div class="title"><b><%= listing.title %></b></div>
+            <div class="price"><b><i class="fa-solid fa-indian-rupee-sign"></i> <%=listing.price.toLocaleString("en-IN") %> </b>/ night</div>
+            <div class="location"> <i class="fa-solid fa-location-crosshairs"></i> <%= listing.location %>, <%= listing.country %></div>
+            <div class="owner">Owned-by <%= listing.owner.username%></div>
+        </div>
+
+        <% if(currentUser && listing.owner.equals(currentUser._id)) { %>    
+        <div class="view-buttons">
+            <form method="get" action="/listings/edit/<%= listing._id %>">
+                <button class="edit">Edit</button>
+            </form>
+            <form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
+                <button class="delete">Delete</button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+    <hr>
+    <div class="description">
+        <h2>Description</h2>
+        <p><%= listing.description %></p>
+    </div>
+     
+    <div class="reviews-block">
+        <div class="reviews-info">
+            <div class="heading"><h2>Reviews</h2></div>
+            <div class="avg-reviews"><i class="fa-solid fa-star" style="color: rgb(255, 248, 30);"></i> <%= avgRating %></div>
+            <div class="total-reviews"> (<%= reviews.length %> reviews) </div>
+        </div>
+
+        <% if( !currentUser || currentUser && !listing.owner.equals(currentUser._id)) {%>
+        <div class="create-review-listing">
+        <form method="post" action="/listings/<%= listing._id %>/review">
+            <h5>Write a Review</h5>
+            <fieldset class="starability-slot">
+                <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="1" checked aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="rating" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="rating" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="rating" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="rating" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="rating" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+            <input type="text" name="review" class="review" placeholder="Leave a detailed review..." required>
+            <div class="button"><button>Submit Review</button></div>
+        </form>
+        </div>
+        <% } %>
+     <% if(reviews.length > 0) { %>
+      <div class="main-reviews-listing">
+        <% for(review of reviews) { %>
+            <div class="reviews-listing">
+                <div class="profile"><i class="fa-solid fa-circle-user" style="font-size: 30px;"></i>
+                </div> 
+                <div class="details">
+                    <div class="username"><b><%= review.author.username%></b></div>
+                    <div class="rating"><p class="starability-result" data-rating= "<%= review.rating%>" ></p> </div>
+                    <div class="review"><%= review.review%></div>
+                </div>
+                <div class="button">
+                <form method="post" action="/listings/<%= listing._id%>/review/<%= review._id%>?_method=DELETE">
+                    <button>delete</button>
+                </form>
+                </div>
+
+            </div>
+            <hr>
+        <% } %>
+      </div>
+     <%}%>
+     <br><br>
+     <% if(reviews.length == 0) {%>
+        <h5>No reviews yet. Be the first to review this place.</h5>
+    <%}%>
+    </div>
+
+    <div class="map-div">
+        <h2>Where you'll be</h2>
+        <div id="map"></div>
+    </div>
+    
+</div>
+
+<script src="/js/map.js"></script>
+</body>

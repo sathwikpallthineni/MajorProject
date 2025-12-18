@@ -1,0 +1,33 @@
+    <% layout("/boilerplate.ejs") -%>
+
+<body>
+    
+        
+    <div class="mainpage">
+    <div class="main-listing">
+        <% for(listing of listings) {%>
+        <div class="listing">
+            <a href="/listings/<%= listing._id %>"><img src="<%= listing.image.url %>" alt="<%= listing.title %>"></a><br>
+           <b> <%= listing.title %></b><br>
+            <i class="fa-solid fa-indian-rupee-sign"></i><%=listing.price.toLocaleString("en-IN") %>/night &nbsp; <i class="tax-info">+18% GST</i><br>
+        </div>
+        <% }%>
+    </div>
+    </div>
+    <script>
+        let tax_toggle = document.getElementById("switchCheckDefault");
+
+        tax_toggle.addEventListener("click",() => {
+            let tax_info = document.getElementsByClassName("tax-info");
+            for(info of tax_info) {
+            if(info.style.display != "inline"){
+                info.style.display = "inline";
+            }
+            else{
+                info.style.display = "none";
+            }
+        }
+        })
+    </script>
+    
+</body> 

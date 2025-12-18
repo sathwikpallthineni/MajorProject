@@ -1,0 +1,13 @@
+<% layout("/boilerplate.ejs") -%>
+
+<body>
+    <div class="mainpage">
+    <div class="main-listing">
+        <div class="listing">
+            <a href="/listings/<%= result._id %>"><img src="<%= result.image.url %>" alt="<%= result.title %>"></a><br>
+           <b> <%= result.title %></b><br>
+            <%= result.price %>/night &nbsp; <i class="tax-info">+18% GST</i><br>
+        </div>
+    </div>
+    </div>
+</body>
