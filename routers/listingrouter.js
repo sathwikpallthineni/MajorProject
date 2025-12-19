@@ -15,7 +15,9 @@ router.route("/")
    
 
 router.get("/new",loggedIn,listingController.renderingListing);
-
+router.get("/menu",(req,res) => {
+    res.render("menu.ejs");
+});
 router.route("/:id")
 .get(listingController.viewListing)
 .put(loggedIn,OwnerIn,upload.single("image"),listingController.updateListing)

@@ -42,6 +42,15 @@
         </form>
     
     <%}%>
+
+    <% if(path == "/listings") { %>
+    <div class="MENU">
+      <form method="get" action="/listings/menu">
+      <button style="background-color: white; border: none;"><i class="fa-solid fa-bars" style="background-color: white; font-size: 25px;"></i></button>
+      </form>
+    </div>
+    <% } %>
+
     <div class="navbar-2">
       <div class="add-listing"><a href="/listings/new" style="text-decoration: none; color: black;font-size: 18px;">List your property</a></div>
         <% if(currentUser == undefined) { %>

@@ -13,7 +13,7 @@ router.route("/signup")
 
 router.route("/login")
 .get(userController.renderingLogin)
-.post(passport.authenticate("local",{failureRedirect:"/login",failureFlash:true}),userController.login);
+.post(passport.authenticate("local",{failureRedirect:"/login",failureFlash:true,keepSessionInfo: true}),userController.login);
 
 router.get("/logout",userController.logout);
 module.exports = router;

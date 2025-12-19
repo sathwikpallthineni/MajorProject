@@ -25,6 +25,12 @@ module.exports.renderingLogin = (req,res) => {
 
 module.exports.login = (req,res) => {
     req.flash("success","welcome back to wanderlust!");
+    if(req.session.redirectUrl){
+        if(req.session.redirectUrl == `/listings/${req.session.listingId}/review`){
+            return res.redirect(`/listings/${req.session.listingId}`);
+        }
+        return res.redirect(req.session.redirectUrl);
+    }
     res.redirect("/listings");
 }
 

@@ -3,12 +3,13 @@ const Review = require("../model/reviewschema");
 
 module.exports.loggedIn = (req,res,next) => {
     if(!req.isAuthenticated()){
+        req.session.redirectUrl = req.originalUrl;
+        req.session.listingId = req.params.id;
         req.flash("error","must be logged in");
        return res.redirect("/login");
     }
     next();
 }
-
 
 module.exports.OwnerIn = async (req, res, next) => {
     const { id } = req.params;
@@ -19,7 +20,6 @@ module.exports.OwnerIn = async (req, res, next) => {
         req.flash("error", "Listing not found");
         return res.redirect("/listings");
     }
-
     if (!req.user) {
         req.flash("error", "You must be logged in");
         return res.redirect("/login");

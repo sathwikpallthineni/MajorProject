@@ -1,2 +1,12 @@
 .env
-node_modules/
+.node_modules/
+
+
+git add views/listings/menu.ejs
+git add app.js
+git add controller
+git add routers
+git add util
+git add public
+git add views
+git add .gitignore

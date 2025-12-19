@@ -1,4 +1,4 @@
-.mainpage{
+/* .mainpage{
     margin-left: 80px;
     margin-top: 50px;
 }
@@ -57,21 +57,19 @@
     opacity: 1;
     cursor: pointer;
 }
-/* .filter .icon{
-    text-align: center;
-} */
 .main-listing{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-row-gap: 30px;
-    /* grid-column-gap:10px; */
 }
 .listing img{
     width: 430px;
     height: 300px;
     border-radius: 15px;
-}
-.listing img:hover{
+} */
+
+
+/* .listing img:hover{
     opacity: 0.8;
 }
 .control{
@@ -98,9 +96,7 @@
     height: 200px;
     width: 750px;
     font-size: 17.5px;
-    position: relative;
-    left: 385px;
-    /* margin: auto; */
+    margin:  auto;
 }
 .view-listing{
     height: 200px;
@@ -124,13 +120,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-} 
-/* .view-listing img{
-    height: 300px;
-    width: 600px;
-    border-radius: 15px;
-} */
-.view-buttons{
+}  */
+
+
+/* .view-buttons{
     margin-top: 50px;
     display: flex;
 }
@@ -154,8 +147,7 @@
 .reviews-block{
     border: 2px solid rgb(205, 203, 203);
     border-radius: 10px;
-    /* padding-left: 20px;
-    padding-right: 20px; */
+   
     padding: 20px;
 }
 .reviews-info{
@@ -169,9 +161,11 @@
     padding: 10px 20px 0px 20px;
     /* padding-left: 20px;
     padding-right: 20px; */
-    border-radius: 10px;
-}
-.create-review-listing .review{
+    /* border-radius: 10px;
+} */ 
+
+
+/* .create-review-listing .review{
     height: 50px;
     width: 100%;
 }
@@ -204,7 +198,6 @@
 }
 .reviews-listing .details{
     margin-left: 20px;
-    /* width: 593px; */
     flex: 1;
     word-break: break-word;
     overflow-wrap: anywhere;
@@ -216,8 +209,11 @@
     color: rgb(0, 0, 0);
     border-radius: 5px;
     border: 1px solid rgb(98, 95, 95);
-}
-.reviews-info .heading{
+} */
+
+
+
+/* .reviews-info .heading{
     margin-right: 30px;
     font-size: 30px;
 }
@@ -236,8 +232,9 @@
 
 .navbar-brand i{
     color: red;
-}
-.new-listing{
+} */
+
+/* .new-listing{
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -251,36 +248,6 @@ justify-content: center;
     width: 250px;
     height: 150px;
 }
-/* .create-review-listing{
-    margin-top: 100px;
-}
-.create-review-listing textarea{
-    border-radius: 5px;
-}
-.create-review-listing button{
-    border-radius: 5px;
-}
-.main-reviews-listing{
-    width: 1000px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.reviews-listing{
-    width: 350px;
-    border: 2px solid rgb(147, 146, 146);
-    border-radius: 7px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    padding-left: 10px;
-}
-.reviews-listing button{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 5px;
-} */
 .alert-success {
     width: 500px;
     height: 60px;
@@ -293,7 +260,7 @@ justify-content: center;
 .alert-danger {
     width: 100vh;
     /* height: 60px; */
-    text-align: center;
+    /* text-align: center;
     font-size: 25px;
     font-weight: 500;
     margin: auto;
@@ -302,8 +269,10 @@ justify-content: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-.login-buttons{
+} */
+
+
+/* .login-buttons{
     width: 100px;
     display: flex;
     flex-direction: row;
@@ -369,12 +338,13 @@ justify-content: center;
     width: 100vh;
     height: 500px;
     margin: 20px;
-}
-.search{
+} */
+
+
+/* .search{
     text-align: center;
     display: flex;
     flex-direction: row;
-    /* margin: auto; */
     margin-left: 150px;
 }
 .search-bar .search-input{
@@ -393,88 +363,652 @@ justify-content: center;
     color: white;
     border: none;
     font-size: 16px;
+} */
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+/* .close{
+    text-align: right;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+} */
+
+/* Menu panel when opened */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #0f0f0f;
+    color: #fff;
+
+    padding: 24px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+}
+
+/* Close button */
+.menu .close {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.menu .close a {
+    color: #ff4d4d;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+/* Menu options */
+.menu .options {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Links */
+.menu .options a {
+    padding: 12px 16px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #eaeaea;
+    border-radius: 10px;
+}
+
+/* Primary action */
+.menu .add-property a {
+    background: #2b6cff;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Logout */
+.menu .logout a {
+    color: #ff6b6b;
+}
+
+/* Hide menu on tablets & desktops */
+@media (min-width: 768px) {
+    .MENU {
+        display: none;
+    }
 }
 
 
 
-@media (max-width: 480px) {
 
-  .mainpage {
-    margin-left: 0;
-    margin-top: 20px;
-    padding: 0 10px;
-  }
 
-  .navbar {
-    flex-direction: column;
-    height: auto;
-  }
 
-  .navbar-1,
-  .navbar-2 {
-    width: 100%;
-    justify-content: space-around;
-  }
 
-  .filters {
-    flex-wrap: wrap;
-    margin-left: 0;
-    justify-content: center;
-  }
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-  .filter {
-    margin-right: 20px;
-  }
+.logo .fa-regular,
+.navbar-brand i {
+  color: red;
+}
 
-  .main-listing {
-    grid-template-columns: 1fr;
-  }
+.navbar-1,
+.navbar-2,
+.login-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-  .listing img {
-    margin: auto;
-    display: block;
-  }
+.logout,
+.login a {
+  text-decoration: none;
+  color: black;
+}
 
-  .control {
-    flex-direction: column;
-    gap: 10px;
-  }
+/* =========================
+   SEARCH
+========================= */
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
 
-  .main-view-listing {
-    position: static;
-    width: 100%;
-    height: auto;
-  }
+.search-bar .search-input {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid rgb(98, 95, 95);
+  text-align: center;
+}
 
-  .view-listing {
-    flex-direction: column;
-    gap: 15px;
-  }
+.search-button button {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #FF385C;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
 
-  .view-buttons {
-    justify-content: center;
-  }
+/* =========================
+   FILTERS
+========================= */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
 
-  .reviews-info {
-    flex-direction: column;
-    gap: 5px;
-  }
+.filter {
+  text-align: center;
+}
 
+.filter p {
+  font-size: 0.8rem;
+}
+
+.filter a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.7;
+}
+
+.filter a:hover {
+  opacity: 1;
+}
+
+/* =========================
+   LISTINGS GRID
+========================= */
+.main-listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.listing img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.listing img:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   CONTROL BAR
+========================= */
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 15px;
+}
+
+.tax-toggle {
+  border: 2px solid rgb(146, 143, 143);
+  border-radius: 17px;
+  padding: 0.5rem 1rem;
+}
+
+/* =========================
+   VIEW LISTING
+========================= */
+.main-view-listing {
+  max-width: 750px;
+  margin: 2rem auto;
+}
+
+.view-listing {
+  display: flex;
+  /* gap: 1.5rem; */
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.view-listing .title {
+  font-size: 30px;
+}
+
+.view-listing .price {
+  font-size: 23px;
+}
+
+.view-listing .price b {
+  font-size: 30px;
+  color: #FF385C;
+}
+
+.listing-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* =========================
+   VIEW BUTTONS
+========================= */
+.view-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.view-buttons .edit {
+  height: 33px;
+  width: 80px;
+  background-color: #f8f6f6;
+  border-radius: 5px;
+  border: 1px solid rgb(98, 95, 95);
+}
+
+.view-buttons .delete {
+  height: 33px;
+  width: 95px;
+  background-color: #FF385C;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+.reviews-block {
+  border: 2px solid rgb(205, 203, 203);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.reviews-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.reviews-info .heading {
+  font-size: 30px;
+}
+
+.reviews-info .avg-reviews,
+.reviews-info .total-reviews {
+  font-size: 20px;
+}
+
+.create-review-listing {
+  border: 2px solid rgb(205, 203, 203);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.create-review-listing .review {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgb(205, 203, 203);
+}
+.create-review-listing .button {
+    text-align: right;
+}
+.create-review-listing button {
+  margin-top: 0.75rem;
+  color: white;
+  background-color: #FF385C;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+}
+
+.reviews-listing {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.reviews-listing .details {
+  flex: 1;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.reviews-listing button {
+  height: 33px;
+  width: 80px;
+  background-color: #f8f6f6;
+  border-radius: 5px;
+  border: 1px solid rgb(98, 95, 95);
+}
+
+/* =========================
+   FORMS
+========================= */
+.new-listing,
+.edit-listing {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-listing img {
+  max-width: 250px;
+  border-radius: 10px;
+}
+
+/* =========================
+   ALERTS
+========================= */
+.alert {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.alert-success,
+.alert-danger {
+  max-width: 500px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* =========================
+   MAP & SWIPER
+========================= */
+.map-div {
+  margin-top: 2rem;
+}
+
+#map {
+  width: 100%;
+  max-width: 750px;
+  height: 400px;
+  margin: auto;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 750px;
+  aspect-ratio: 3 / 2;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =========================
+   EXPLORE LINK
+========================= */
+.explore {
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.explore:hover {
+  color: #212529;
+}
+
+/* =========================
+   MOBILE ADJUSTMENTS
+========================= */
+@media (max-width: 768px) {
+  .view-listing,
   .reviews-listing {
     flex-direction: column;
   }
 
-  .map-div {
-    display: flex;
+  .filters,
+  .navbar {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  /* NAVBAR: stack cleanly */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .navbar-1,
+  .navbar-2,
+  .login-buttons {
+    width: 100%;
     justify-content: center;
   }
 
-  #map {
+  /* SEARCH: full-width block */
+  .search {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-bar .search-input {
     max-width: 100%;
   }
 
-  .swiper,
-  .swiper-slide img {
+  /* FILTERS: compact and centered */
+  .filters {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .filter {
+    width: 70px;
+  }
+
+  /* TAX TOGGLE: center it */
+  .tax-toggle {
+    margin: 0 auto;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .navbar-2 {
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar-2 a {
+    color: #444;
+    font-weight: 500;
+  }
+
+  .navbar-2 a.logout {
+    color: #FF385C;
+  }
+}
+@media (max-width: 768px) {
+  .filters {
+    display: none;
+  }
+}
+
+.alert-success{
+    height: 50px;
+}
+.alert-dismissible{
+    height: 50px;
+}
+
+/* =========================
+   MOBILE NAVBAR FIX (SAFE)
+========================= */
+@media (max-width: 768px) {
+
+  /* Hide Explore + auth on mobile */
+  .navbar-1,
+  .navbar-2 {
+    display: none;
+  }
+
+  /* Navbar positioning context */
+  .navbar {
+    position: relative;
+  }
+
+  /* Search stays in flow, full width */
+  .search {
+    width: 100%;
+    justify-content: center;
+    padding-right: 50px; /* space for menu icon */
+  }
+
+  .search-bar .search-input {
     max-width: 100%;
   }
+
+  /* Menu icon fixed top-right */
+  .MENU {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 10;
+  }
+
+  /* Hide tax & filters on mobile */
+  .tax-toggle,
+  .filters {
+    display: none;
+  }
+}
+
+/* =========================
+   MOBILE SEARCH REFINEMENT
+========================= */
+@media (max-width: 768px) {
+
+  /* Push search below menu */
+  .search {
+    margin-top: 1.75rem;
+  }
+
+  /* Smaller input on mobile */
+  .search-bar .search-input {
+    height: 36px;
+    font-size: 14px;
+    border-radius: 18px;
+  }
+
+  /* Smaller search button */
+  .search-button button {
+    height: 36px;
+    width: 96px;
+    font-size: 14px;
+    border-radius: 18px;
+  }
+}
+
+/* =========================
+   DESKTOP GRID & FILTER FIX
+========================= */
+@media (min-width: 1024px) {
+
+  /* Force clean 4-column layout */
+  .main-listing {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Spread filters evenly across width */
+  .filters {
+    justify-content: space-between;
+  }
+
+  /* Prevent filters from shrinking */
+  .filter {
+    flex: 0 0 auto;
+  }
+  @media (min-width: 1024px) {
+
+  .filters {
+    width: 100%;
+  }
+  @media (min-width: 1024px) {
+  .filters {
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+}
+}
+
 }

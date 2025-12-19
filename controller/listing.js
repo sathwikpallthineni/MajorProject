@@ -46,7 +46,7 @@ module.exports.viewListing = async(req,res,next) => {
         for(review of reviews){
             totalRating = totalRating+ review.rating;
         }
-        let avgRating = totalRating/reviews.length;
+        avgRating = Number((totalRating / reviews.length).toFixed(1));
         if(!avgRating){
             avgRating = 0;
         }
