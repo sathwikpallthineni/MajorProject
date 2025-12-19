@@ -28,8 +28,8 @@ app.listen(8080,(req,res) => {
 });
 
 
-mongoose.connect(process.env.ATLASDB_URL)
-// mongoose.connect("mongodb://127.0.0.1:27017/PRACTICEWANDERLUST")
+// mongoose.connect(process.env.ATLASDB_URL)
+mongoose.connect("mongodb://127.0.0.1:27017/PRACTICEWANDERLUST")
 .then(() => {
     console.log("DataBase connected successful");
 })
@@ -38,8 +38,8 @@ mongoose.connect(process.env.ATLASDB_URL)
 })
 
 const store =  MongoStore.create({
-    mongoUrl: process.env.ATLASDB_URL,
-    // mongoUrl:"mongodb://127.0.0.1:27017/PRACTICEWANDERLUST",
+    // mongoUrl: process.env.ATLASDB_URL,
+    mongoUrl:"mongodb://127.0.0.1:27017/PRACTICEWANDERLUST",
     crypto: {
         secret: process.env.SECRET,
      },

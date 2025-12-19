@@ -5,8 +5,14 @@ const geocodingClient = mbxGeocoding({ accessToken: maptoken });
 
 module.exports.index = async (req,res) => {
     let listings = await Listing.find();
+    let totalRating = 0;
+    for(listing of listings){
+        for(listing.review of listing.reviews){
+            
+        }
+    }
     res.render("index.ejs",{listings});
-};
+}; 
 
 module.exports.renderingListing = (req,res) => {
     res.render("new.ejs");
