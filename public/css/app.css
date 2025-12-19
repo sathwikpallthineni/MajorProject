@@ -472,7 +472,9 @@ img {
 .menu .logout a {
     color: #ff6b6b;
 }
-
+.MENU{
+  text-align: right;
+}
 /* Hide menu on tablets & desktops */
 @media (min-width: 768px) {
     .MENU {
@@ -619,7 +621,7 @@ img {
   margin: 2rem auto;
 }
 .middle-view-listing{
-  margin: 0px 10px 0px 10px ;
+  margin: 0px 13px 0px 13px ;
 }
 .view-listing {
   display: flex;
@@ -974,11 +976,23 @@ img {
   /* Smaller search button */
   .search-button button {
     height: 36px;
-    width: 96px;
+    width: 60px;
     font-size: 14px;
     border-radius: 18px;
   }
 }
+
+@media (max-width: 600px) {
+  .btn-text {
+    display: none;
+  }
+
+  .search-button button {
+    padding: 6px;
+    font-size: 18px;   /* square icon button */
+  }
+}
+
 
 /* =========================
    DESKTOP GRID & FILTER FIX
@@ -1050,7 +1064,7 @@ img {
   padding-left: 10px;
 }
 .listing-info .title{
-  font-weight: medium;
+  font-weight: 490;
   font-size: large;
 }
 .listing-info .price b{
@@ -1062,8 +1076,23 @@ img {
   flex-direction: row;
 }
 .mainpage{
-  margin: 0px 10px 0px 10px;
+  margin: 0px 13px 0px 13px;
 }
 .navbar{
+  margin: 0px 15px 0px 15px;
+}
+.listing {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.swiper-div{
   margin: 0px 10px 0px 10px;
 }
