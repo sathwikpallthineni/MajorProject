@@ -535,6 +535,7 @@ img {
   border-radius: 20px;
   border: 1px solid rgb(98, 95, 95);
   text-align: center;
+  margin-top: 20px;
 }
 
 .search-button button {
@@ -545,6 +546,7 @@ img {
   color: white;
   border: none;
   font-size: 16px;
+  margin-top: 20px; 
 }
 
 /* =========================
@@ -621,7 +623,7 @@ img {
   margin: 2rem auto;
 }
 .middle-view-listing{
-  margin: 0px 13px 0px 13px ;
+  margin: 0px 15px 0px 15px ;
 }
 .view-listing {
   display: flex;
@@ -1076,7 +1078,7 @@ img {
   flex-direction: row;
 }
 .mainpage{
-  margin: 0px 13px 0px 13px;
+  margin: 0px 15px 0px 15px;
 }
 .navbar{
   margin: 0px 15px 0px 15px;

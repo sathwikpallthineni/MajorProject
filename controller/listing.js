@@ -1,16 +1,27 @@
+const listing = require("../model/listingschema");
 const Listing = require("../model/listingschema");
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const maptoken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: maptoken });
 
 module.exports.index = async (req,res) => {
-    let listings = await Listing.find();
-    let totalRating = 0;
-    for(listing of listings){
-        for(listing.review of listing.reviews){
-            
-        }
+    let listings = await Listing.find().populate("reviews");
+
+    for(let listing of listings){
+        let totalRating = 0;
+        let avgRating = 0;
+     for(listing.review of listing.reviews){
+        totalRating = totalRating+listing.review.rating;
+     }
+    if(listing.reviews.length > 0){
+     avgRating = Number((totalRating /listing.reviews.length).toFixed(1));
     }
+
+        listing.avgRating = avgRating;
+        let result = await listing.save();
+     
+    }
+
     res.render("index.ejs",{listings});
 }; 
 

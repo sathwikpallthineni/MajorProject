@@ -32,6 +32,9 @@ const listingschema = new mongoose.Schema({
             ref:"Review",
         },
     ],
+    avgRating:{
+        type:Number,
+    },
     owner:{
         type: mongoose.Schema.Types.ObjectId,
         ref:"User",

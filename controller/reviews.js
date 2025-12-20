@@ -11,9 +11,18 @@ module.exports.addingRreview = async (req,res) => {
         rating:rating,
         author:req.user._id,
     });
-    let listing = await Listing.findById(id);
+    let listing = await Listing.findById(id).populate("reviews");
     listing.reviews.push(random);
     await listing.save();
+
+    let totalRating = 0;
+    for(listing.review of listing.reviews){
+        totalRating = totalRating+listing.review.rating;
+    }
+    let avgRating = Number((totalRating /listing.reviews.length).toFixed(1));
+    listing.avgRating = avgRating;
+    let result = await listing.save();
+    console.log(result);
     req.flash("success","Review created");
     res.redirect(`/listings/${id}`);
     }

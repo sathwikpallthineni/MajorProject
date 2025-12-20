@@ -95,4 +95,3 @@ app.use((err,req,res,next) => {
     let {statuscode=500,message = "something went wrong"} = err;
     res.render("error.ejs",{message});
 });
-
