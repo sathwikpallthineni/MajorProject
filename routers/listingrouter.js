@@ -30,10 +30,9 @@ router.post("/search",async(req,res) => {
     let listing = await Listing.find();
     for(list of listing){
         if(list.title == input || list.title.toLowerCase() == input || list.title.toUpperCase() == input) {
-           let result = list;
-           console.log(result);
+           let listing = list;
            console.log(list.title.toLowerCase());
-         return res.render("search.ejs",{result})
+         return res.render("search.ejs",{listing})
         }
     }
     req.flash("error","No match found");

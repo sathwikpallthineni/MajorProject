@@ -4,9 +4,33 @@
     <div class="mainpage">
     <div class="main-listing">
         <div class="listing">
-            <a href="/listings/<%= result._id %>"><img src="<%= result.image.url %>" alt="<%= result.title %>"></a><br>
-           <b> <%= result.title %></b><br>
-            <%= result.price %>/night &nbsp; <i class="tax-info">+18% GST</i><br>
+            
+                <div class="listing-image">
+                    <a href="/listings/<%= listing._id %>"><img src="<%= listing.image.url %>" alt="<%= listing.title %>"></a>
+                    <div class="listing-location"><i class="fa-solid fa-location-dot"></i> <%= listing.location%> ,<%=listing.country%></div>
+                </div> 
+            <div class="listing-info">
+                <div class="title-rating">
+                    <div class="title"><%= listing.title %> </div>
+                </div>
+                <div class="price-review">
+                    <div class="price">
+                        <i class="fa-solid fa-indian-rupee-sign"></i> <b><%=listing.price.toLocaleString("en-IN") %></b>/ night
+                        <i class="tax-info">+18% GST</i>
+                    </div>
+                    <div class="rating">
+                        <% if(listing.avgRating == 0){ %>
+                            No reviews yet
+                        <% } %>
+                        <% if(listing.avgRating != 0){ %>
+                           <i class="fa-solid fa-star" style="color: rgb(248, 240, 1);"></i><%= listing.avgRating %> 
+                        <% } %>
+                     </div>   
+                    
+                </div>
+            </div>
+           <!-- <b> <%= listing.title %></b><br>
+            <i class="fa-solid fa-indian-rupee-sign"></i>/night &nbsp; <i class="tax-info">+18% GST</i><br> -->
         </div>
     </div>
     </div>
