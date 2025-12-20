@@ -55,9 +55,8 @@
      
     <div class="reviews-block">
         <div class="reviews-info">
-            <div class="heading"><h2>Reviews</h2></div>
+            <div class="heading"><h4>Reviews <b>(<%= reviews.length %>)</b></h4></div>
             <div class="avg-reviews"><i class="fa-solid fa-star" style="color: rgb(255, 248, 30);"></i> <%= avgRating %></div>
-            <div class="total-reviews"> (<%= reviews.length %> reviews) </div>
         </div>
 
         <% if( !currentUser || currentUser && !listing.owner.equals(currentUser._id)) {%>

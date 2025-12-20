@@ -483,7 +483,11 @@ img {
 }
 
 
-
+@media (max-width: 768px) {
+    .MENU {
+        text-align: right;
+    }
+}
 
 
 
@@ -535,19 +539,26 @@ img {
   border-radius: 20px;
   border: 1px solid rgb(98, 95, 95);
   text-align: center;
-  margin-top: 20px;
 }
 
 .search-button button {
-  width: 120px;
+  width: 50px;
   height: 40px;
   border-radius: 20px;
   background-color: #FF385C;
   color: white;
   border: none;
   font-size: 16px;
-  margin-top: 20px; 
 }
+/* =========================
+   MOBILE: HIDE SEARCH BUTTON
+========================= */
+@media (max-width: 768px) {
+  .search-button {
+    display: none;
+  }
+}
+
 
 /* =========================
    FILTERS
@@ -694,11 +705,14 @@ img {
 }
 
 .reviews-info .heading {
-  font-size: 30px;
+  font-size: 20px;
+}
+.reviews-info .heading b{
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.reviews-info .avg-reviews,
-.reviews-info .total-reviews {
+.reviews-info .avg-reviews {
   font-size: 20px;
 }
 
@@ -742,12 +756,39 @@ img {
 }
 
 .reviews-listing button {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 0.85rem;
+  background-color: transparent;
+  color: #c1121f;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reviews-listing button:hover {
+  background-color: #fdecec;
+  border-color: #c1121f;
+}
+.reviews-listing button {
+  color: #b42318;   /* slightly muted red */
+  border-color: #ededed;
+}
+
+.reviews-listing button:hover {
+  background-color: #fff1f1;
+}
+
+
+/* 
+.reviews-listing button {
   height: 33px;
   width: 80px;
   background-color: #f8f6f6;
   border-radius: 5px;
   border: 1px solid rgb(98, 95, 95);
-}
+} */
 
 /* =========================
    FORMS
@@ -936,7 +977,7 @@ img {
   .search {
     width: 100%;
     justify-content: center;
-    padding-right: 50px; /* space for menu icon */
+    padding-right: 0px; /* space for menu icon */
   }
 
   .search-bar .search-input {
@@ -1045,43 +1086,71 @@ img {
   align-items: center;
   gap: 6px;
 
-  padding: 6px 12px;
-  border-radius: 10px;
+  padding: 5px 10px;
+  border-radius: 8px;
 
-  background: rgba(0, 0, 0, 0.30);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.18);   /* lighter */
+  color: #f1f1f1;
 
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 400;                 /* calmer */
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: none;                     /* kill border */
 }
-.listing-info{
+
+.listing-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-top: 3%;
-  padding-left: 10px;
+  gap: 6px;              /* controlled spacing */
+  padding: 12px 14px;
 }
-.listing-info .title{
-  font-weight: 490;
-  font-size: large;
+
+/* TITLE */
+.listing-info .title {
+  font-size: 1rem;
+  font-weight: 600;      /* clear intent */
+  color: #222;
+  line-height: 1.2;
 }
-.listing-info .price b{
-  font-weight: bold;
-  font-size: large;
-}
-.title-rating{
+
+/* PRICE + RATING ROW */
+.price-review {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/* PRICE */
+.price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e63946;        /* your accent color */
+}
+
+.price b {
+  font-weight: inherit; /* avoid double bold stupidity */
+}
+
+/* / night text */
+.price .per-night {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #666;
+  margin-left: 2px;
+}
+
+/* RATING / NO REVIEWS */
+.rating {
+  font-size: 0.85rem;
+  color: #777;
+  white-space: nowrap;
+}
+
 .mainpage{
   margin: 0px 15px 0px 15px;
 }
 .navbar{
-  margin: 0px 15px 0px 15px;
+  margin: 0px 10px 0px 10px;
 }
 .listing {
   background: #fff;
@@ -1098,3 +1167,35 @@ img {
 .swiper-div{
   margin: 0px 10px 0px 10px;
 }
+
+/* =========================
+   DESKTOP DEFAULT (SAFE)
+========================= */
+
+.search-bar .search-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .search-bar {
+    position: relative;
+  }
+
+  /* SAME SELECTOR — now it overrides */
+  .search-bar .search-icon {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #777;
+    pointer-events: none;
+  }
+
+  .search-bar .search-input {
+    padding-left: 30px;
+  }
+}
+
